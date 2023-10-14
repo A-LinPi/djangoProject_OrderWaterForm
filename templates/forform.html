@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{ name }}</h1>
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        <table>
+        {% if forma %}
+            <div>{{ forma.name.label_tag }}</div>
+            <div>{{ forma.name }}</div>
+            <div>{{ forma.name.errors }}</div>
+            <div>{{ forma.lastname.label_tag }}</div>
+            <div>{{ forma.lastname }}</div>
+            <div>{{ forma.lastname.errors }}</div>
+            <div>{{ forma.email.label_tag }}</div>
+            <div>{{ forma.email }}</div>
+            <div>{{ forma.email.errors }}</div>
+            <div>{{ forma.tel.label_tag }}</div>
+            <div>{{ forma.tel }}</div>
+            <div>{{ forma.tel.errors }}</div>
+            <div>{{ forma.address.label_tag }}</div>
+            <div>{{ forma.address }}</div>
+            <div>{{ forma.address.errors }}</div>
+            <div>{{ forma.month.label_tag }}</div>
+            <div>{{ forma.month }}</div>
+            <div>{{ forma.vol.label_tag }}</div>
+            <div>{{ forma.vol }}</div>
+            <br>
+        {% endif %}
+        </table>
+
+        <input type='submit' value='send'>
+    </form>
+</body>
+</html>
