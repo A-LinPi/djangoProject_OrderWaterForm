@@ -8,20 +8,6 @@ def index(req):
     return render(req, 'index.html')
 
 
-def formaone(req):
-    anketa = Forma1()
-    if req.method == 'POST':
-        k1 = req.POST.get('name')
-        k2 = req.POST.get('age')
-        out = f'<p>{k1}</p><p>{k2}</p>'
-        return HttpResponse(out)
-    else:
-        data = {
-            'forma': anketa
-        }
-    return render(req, 'forform.html', data)
-
-
 # Create your views here.
 def formatwo(req):
     anketa = Forma2()
