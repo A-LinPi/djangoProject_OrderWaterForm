@@ -3,26 +3,6 @@ from django.shortcuts import render
 from .forms import *
 
 
-# Create your views here
-def formcomment(req):
-    nashaforma = UserComment()  # пустая форма
-    data = {'forma': nashaforma}
-    print(1)
-    if req.POST:  # отправил форму
-        nashaforma = UserComment(req.POST)  # форма с данными
-        data = {'forma': nashaforma}
-        print(2)
-        if nashaforma.is_valid():
-            print(3)
-            k1 = nashaforma.cleaned_data.get('tel')
-            k2 = nashaforma.cleaned_data.get('email')
-            # k1 = req.POST.get('name')
-            data = {'tel': k1, 'email': k2}
-            return render(req, 'finish.html', data)
-
-    return render(req, 'forma.html', data)
-
-
 # Create your views here.
 def index(req):
     return render(req, 'index.html')
