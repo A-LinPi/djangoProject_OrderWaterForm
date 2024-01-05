@@ -1,6 +1,7 @@
 from django import forms
 from django.core.validators import RegexValidator
 
+
 class Forma2(forms.Form):
     MONTHS = (('один месяц', '1 мес'),
               ('три месяца', '3 мес'),
@@ -14,7 +15,8 @@ class Forma2(forms.Form):
     email = forms.EmailField(required=False, validators=[
         RegexValidator('^[A-Za-z0-9_]{1,100}(@){1}(mail.ru){1}$', message='неправильный email')
     ])
-    tel = forms.CharField(label='телефон', validators=[RegexValidator('^[+][7]{1}[0-9]{10}$', message='неправильный телефон')])
+    tel = forms.CharField(label='телефон',
+                          validators=[RegexValidator('^[+][7]{1}[0-9]{10}$', message='неправильный телефон')])
     address = forms.CharField(label='Адрес')
     month = forms.ChoiceField(label='Количество месяцев доставки воды', choices=MONTHS)
     vol = forms.ChoiceField(label='Объём баллона воды', choices=VOL)
